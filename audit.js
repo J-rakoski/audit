@@ -1,12 +1,12 @@
 function auditProducts() {
   var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
-  var sheet = spreadsheet.getSheetByName("PRICING SHEET");
+  var sheet = spreadsheet.getSheetByName("your-sheet-name");
   
   var dataRange = sheet.getDataRange();
   var values = dataRange.getValues();
 
   var emailAddress = 'your-email goes here'; // Update with your email address
-  var subject = 'Audit Products';
+  var subject = 'email-subject';
   
   var products = [];
   
@@ -14,7 +14,7 @@ function auditProducts() {
     var productName = values[i][0]; // Column A
     var productNumber = values[i][9]; // Column J
     
-    if (values[i][2] === 'AUDIT') { // Column C
+    if (values[i][2] === 'key-word-in-excel') { // Column C
       var message = 'Product Name: ' + productName + '\nProduct Number: ' + productNumber;
       products.push(message);
     }
